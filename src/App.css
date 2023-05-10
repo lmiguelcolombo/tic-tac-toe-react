@@ -15,7 +15,13 @@ body {
 }
 
 .board {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background-color: #eb5c5c;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+}
+
+.square {
+  border: 1px solid rgb(75, 4, 4);
 }
