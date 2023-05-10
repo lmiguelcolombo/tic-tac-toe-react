@@ -2,32 +2,31 @@ import React, { useState } from "react";
 import "./board.css";
 import "../App.css";
 
-function Square() {
+// function PatternsToWin() {
+//   const patterns = [[]];
+//   return;
+// }
+
+function Square({ value }) {
   const [user, setUser] = useState("");
 
-  const handleClick = () => {
-    setUser("X");
-  };
-
-  return (
-    <button onClick={handleClick} className="square">
-      {user}
-    </button>
-  );
+  return <button className="square">{user}</button>;
 }
 
 export default function Board() {
+  const [squares, setSquares] = useState(Array(9).fill(null));
+
   return (
     <div className="board">
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
+      <Square value={squares[0]} />
+      <Square value={squares[1]} />
+      <Square value={squares[2]} />
+      <Square value={squares[3]} />
+      <Square value={squares[4]} />
+      <Square value={squares[5]} />
+      <Square value={squares[6]} />
+      <Square value={squares[7]} />
+      <Square value={squares[8]} />
     </div>
   );
 }
