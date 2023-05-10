@@ -1,19 +1,10 @@
 import "./App.css";
+import Board from "./components/Board";
 
 function App() {
   return (
     <div className="App">
-      <div className="board">
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-        <div className="square"></div>
-      </div>
+      <Board />
     </div>
   );
 }

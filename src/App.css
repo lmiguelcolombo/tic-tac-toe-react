@@ -13,21 +13,3 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.board {
-  width: 600px;
-  height: 600px;
-  background-color: #eb5c5c;
-  display: grid;
-  grid-template-columns: repeat(3, 200px);
-}
-
-.square {
-  border: 1px solid rgb(75, 4, 4);
-
-  transition: background 0.3s ease-in-out;
-}
-
-.square:hover {
-  background-color: #ea3d3d;
-}
