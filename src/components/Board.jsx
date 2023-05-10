@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./board.css";
 import "../App.css";
 
-function Square({ value }) {
+function Square() {
   const [user, setUser] = useState("");
 
   const handleClick = () => {
