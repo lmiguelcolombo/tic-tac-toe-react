@@ -24,4 +24,10 @@ body {
 
 .square {
   border: 1px solid rgb(75, 4, 4);
+
+  transition: background 0.3s ease-in-out;
+}
+
+.square:hover {
+  background-color: #ea3d3d;
 }
