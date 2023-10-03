@@ -49,7 +49,7 @@ export default function Board() {
   };
 
   return (
-    <div className="tic-tac-toe">
+    <div id="tic-tac-toe">
       <div className="board">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
