@@ -1,11 +1,25 @@
+html {
+  font-family: "Inter", sans-serif;
+}
+
+.tic-tac-toe {
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+}
+
 .board {
   width: 600px;
   height: 600px;
+  grid-gap: 0;
   display: grid;
   grid-template-columns: repeat(3, 200px);
 }
 
 .square {
+  width: 200px;
+  height: 200px;
+
   display: flex;
   align-items: center;
   justify-content: center;
