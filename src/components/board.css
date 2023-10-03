@@ -1,11 +1,25 @@
+html {
+  font-family: "Inter", sans-serif;
+}
+
+.tic-tac-toe {
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+}
+
 .board {
   width: 600px;
   height: 600px;
+  grid-gap: 0;
   display: grid;
   grid-template-columns: repeat(3, 200px);
 }
 
 .square {
+  width: 200px;
+  height: 200px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,5 +34,45 @@
 
 .square:hover {
   background-color: #e92a2a;
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  height: 100px;
+
+  font-weight: 700;
+  font-size: 40px;
+
+  background: #38ff4999;
+  border-radius: 2rem;
+
+  padding: 4rem;
+}
+
+.status button {
+  font: 16px "Inter", sans-serif;
+
+  padding: 10px;
+
+  background: #18812199;
+  border: 2px solid #18812199;
+  border-radius: 0.5rem;
+
+  transition: 0.3s ease;
+}
+
+.status button:hover {
+  background-color: #10581699;
   cursor: pointer;
 }

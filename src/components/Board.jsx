@@ -43,9 +43,13 @@ export default function Board() {
     status = "Winner: " + winner;
   }
 
+  const handleResetGame = () => {
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
+  };
+
   return (
-    <>
-      {/* <div className="status">{message}</div> */}
+    <div className="tic-tac-toe">
       <div className="board">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -57,7 +61,11 @@ export default function Board() {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
-    </>
+      <div className={winner ? "status" : "none"}>
+        {status}
+        <button onClick={() => handleResetGame()}>Play Again</button>
+      </div>
+    </div>
   );
 }
 
