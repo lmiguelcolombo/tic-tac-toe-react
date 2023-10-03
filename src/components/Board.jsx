@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import JSConfetti from "js-confetti";
 import "./board.css";
 import "../App.css";
 
@@ -40,6 +41,10 @@ export default function Board() {
   const winner = checkWinner(squares);
   let status;
   if (winner) {
+    const canvas = document.getElementById("canvas-element");
+    const jsConfetti = new JSConfetti({ canvas });
+    jsConfetti.addConfetti();
+
     status = "Winner: " + winner;
   }
 
@@ -49,27 +54,29 @@ export default function Board() {
   };
 
   return (
-    <div className="tic-tac-toe">
-      <div className="board">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+    <>
+      {winner && <canvas id="canvas-element"></canvas>}
+      <div id="tic-tac-toe">
+        <div className="board">
+          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        </div>
+        <div className={winner ? "status" : "none"}>
+          {status}
+          <button onClick={() => handleResetGame()}>Play Again</button>
+        </div>
       </div>
-      <div className={winner ? "status" : "none"}>
-        {status}
-        <button onClick={() => handleResetGame()}>Play Again</button>
-      </div>
-    </div>
+    </>
   );
 }
 
-// TODO: Understand this function
 function checkWinner(squares) {
   const patterns = [
     [0, 1, 2],

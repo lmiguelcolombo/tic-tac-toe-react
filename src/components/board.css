@@ -2,10 +2,16 @@ html {
   font-family: "Inter", sans-serif;
 }
 
-.tic-tac-toe {
+#tic-tac-toe {
   display: flex;
   flex-direction: row;
   gap: 10rem;
+}
+
+canvas#canvas-element {
+  margin: 0;
+  width: 0;
+  height: 0;
 }
 
 .board {
