@@ -2,6 +2,10 @@ html {
   font-family: "Inter", sans-serif;
 }
 
+body {
+  background-color: #dadada;
+}
+
 #tic-tac-toe {
   display: flex;
   flex-direction: row;
@@ -12,6 +16,12 @@ canvas#canvas-element {
   margin: 0;
   width: 0;
   height: 0;
+}
+
+h1 {
+  font: 500 50px "Fredoka", sans-serif;
+  display: block;
+  position: relative;
 }
 
 .board {
@@ -30,16 +40,17 @@ canvas#canvas-element {
   align-items: center;
   justify-content: center;
 
-  font: 600 30px "Inter", sans-serif;
+  font: 600 100px "Fredoka", sans-serif;
+  color: #dadada;
 
-  background-color: #e96464;
-  border: 1px solid rgb(75, 4, 4);
+  background-color: #0565ff;
+  border: 1px solid rgb(4, 26, 75);
 
   transition: background 0.3s ease-in-out;
 }
 
 .square:hover {
-  background-color: #e92a2a;
+  background-color: #004dc8;
   cursor: pointer;
 }
 
@@ -60,7 +71,7 @@ canvas#canvas-element {
   font-weight: 700;
   font-size: 40px;
 
-  background: #38ff4999;
+  background: #13bd22c1;
   border-radius: 2rem;
 
   padding: 4rem;
@@ -71,14 +82,53 @@ canvas#canvas-element {
 
   padding: 10px;
 
-  background: #18812199;
-  border: 2px solid #18812199;
+  background: #0a933199;
+  border: 2px solid #11911c99;
   border-radius: 0.5rem;
 
   transition: 0.3s ease;
 }
 
 .status button:hover {
-  background-color: #10581699;
+  background-color: #1c822599;
   cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  #tic-tac-toe {
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+  }
+
+  canvas#canvas-element {
+    margin: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .board {
+    width: 200px;
+    height: 200px;
+    grid-gap: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+  }
+
+  .square {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font: 600 40px "Fredoka", sans-serif;
+    color: #dadada;
+
+    background-color: #0565ff;
+    border: 1px solid rgb(4, 26, 75);
+
+    transition: background 0.3s ease-in-out;
+  }
 }
