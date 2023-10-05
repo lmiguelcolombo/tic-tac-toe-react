@@ -35,17 +35,28 @@ export default function Board() {
 
     setSquares(nextSquares); // squares = nextSquares;
     setXIsNext(!xIsNext);
-    // TODO: check xIsNext
   };
 
   const winner = checkWinner(squares);
-  let status;
-  if (winner) {
+
+  let status = "";
+
+  if (winner && winner !== "draw") {
     const canvas = document.getElementById("canvas-element");
     const jsConfetti = new JSConfetti({ canvas });
     jsConfetti.addConfetti();
 
     status = "Winner: " + winner;
+  }
+
+  if (winner === "draw") {
+    // const canvas = document.getElementById("canvas-element");
+    // const jsConfetti = new JSConfetti({ canvas });
+    // jsConfetti.addConfetti({
+    //   emojis: ["🤣", "😩"],
+    // });
+
+    status = "There has been a draw!";
   }
 
   const handleResetGame = () => {
@@ -56,6 +67,7 @@ export default function Board() {
   return (
     <>
       {winner && <canvas id="canvas-element"></canvas>}
+      {/* <h1>Tic Tac Toe</h1> */}
       <div id="tic-tac-toe">
         <div className="board">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -93,6 +105,8 @@ function checkWinner(squares) {
     const [a, b, c] = patterns[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
+    } else if (!squares.includes(null)) {
+      return "draw";
     }
   }
   return null;
