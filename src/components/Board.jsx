@@ -69,7 +69,7 @@ export default function Board() {
       {winner && <canvas id="canvas-element"></canvas>}
       {/* <h1>Tic Tac Toe</h1> */}
       <div id="tic-tac-toe">
-        <div className="board">
+        <div className={`board ${winner ? "none-sm" : ""}`}>
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
           <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
           <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
