@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-family: "Inter", sans-serif;
 }
@@ -66,7 +72,8 @@ h1 {
   align-items: center;
   align-self: center;
 
-  height: 100px;
+  width: 22rem;
+  height: 20rem;
 
   font-weight: 700;
   font-size: 40px;
@@ -78,9 +85,9 @@ h1 {
 }
 
 .status button {
-  font: 16px "Inter", sans-serif;
+  font: 20px "Inter", sans-serif;
 
-  padding: 10px;
+  padding: 1rem;
 
   background: #0a933199;
   border: 2px solid #11911c99;
@@ -94,21 +101,50 @@ h1 {
   cursor: pointer;
 }
 
-@media (max-width: 500px) {
-  #tic-tac-toe {
+@media (max-width: 768px) {
+  .none,
+  .none-sm {
+    display: none;
+  }
+
+  .status {
     display: flex;
-    flex-direction: row;
-    gap: 10rem;
+    flex-direction: column;
+    align-self: center;
+
+    width: 30rem;
+    height: 30rem;
+
+    font-weight: 800;
+    font-size: 50px;
+
+    background: #13bd22c1;
+    border-radius: 2rem;
+
+    gap: 5rem;
   }
 
-  canvas#canvas-element {
-    margin: 0;
-    width: 0;
-    height: 0;
+  .status button {
+    font: 24px "Inter", sans-serif;
+
+    padding: 1.25rem;
+
+    background: #0a933199;
+    border: 2px solid #11911c99;
+    border-radius: 0.5rem;
+
+    transition: 0.3s ease;
   }
 
+  .status button:hover {
+    background-color: #1c822599;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 698px) {
   .board {
-    width: 200px;
+    width: 100%;
     height: 200px;
     grid-gap: 0;
     display: grid;
@@ -119,16 +155,56 @@ h1 {
     width: 75px;
     height: 75px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font: 600 40px "Fredoka", sans-serif;
+    font: 600 70px "Fredoka", sans-serif;
+    text-align: center;
     color: #dadada;
 
     background-color: #0565ff;
     border: 1px solid rgb(4, 26, 75);
 
     transition: background 0.3s ease-in-out;
+  }
+
+  .square:hover {
+    background-color: #004dc8;
+    cursor: pointer;
+  }
+
+  .none,
+  .none-sm {
+    display: none;
+  }
+
+  .status {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    height: 15rem;
+
+    font-weight: 700;
+    font-size: 35px;
+
+    background: #13bd22c1;
+    border-radius: 2rem;
+
+    gap: 2rem;
+  }
+
+  .status button {
+    font: 16px "Inter", sans-serif;
+
+    padding: 10px;
+
+    background: #0a933199;
+    border: 2px solid #11911c99;
+    border-radius: 0.5rem;
+
+    transition: 0.3s ease;
+  }
+
+  .status button:hover {
+    background-color: #1c822599;
+    cursor: pointer;
   }
 }
